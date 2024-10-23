@@ -623,14 +623,14 @@
                                 {
                                     "name": "sessionHostSize",
                                     "type": "Microsoft.Compute.SizeSelector",
-                                    "label": "VM Size1",
+                                    "label": "VM Size2",
                                     "toolTip": "",
                                     "recommendedSizes": [
                                         "Standard_D4ads_v5"
                                     ],
                                     "constraints": {
-                                        "allowedSizes": [],
-                                        "excludedSizes": ["if(equals(steps('sessionHosts').sessionHostsSecuritySection.securityType, 'ConfidentialVM'), filter(steps('sessionHosts').sessionHostsSize.allSizes, (size) => or(matches(size, '^DC[0-9]{1,2}s_v2$'), matches(size, '^DC[0-9]{1,2}s_v3$'), matches(size, '^DC[0-9]{1,2}ds_v3$'))), [])"],
+                                        "allowedSizes": "[if(equals(steps('sessionHosts').sessionHostsSecuritySection.securityType, 'ConfidentialVM'), ['Standard_DC2s_v3', 'Standard_DC4s_v3'], [])]",
+                                        "excludedSizes": [],
                                         "required": true
                                     },
                                     "options": {
@@ -645,7 +645,7 @@
                                     "scope": {
                                         "location": "[steps('sessionHosts').sessionHostsRegionSection.sessionHostsRegion]",
                                         "subscriptionId": "[steps('basics').resourceScope.subscription.subscriptionId]"
-                                    }                              
+                                    }
                                 },
                                 {
                                     "name": "sessionHostSizeInfobox",
@@ -858,7 +858,9 @@
                                             }
                                         ]
                                     }
-                                },
+                                }
+                            ]
+                        },
                                 {
                                     "name": "secureBootEnabled",
                                     "type": "Microsoft.Common.CheckBox",
