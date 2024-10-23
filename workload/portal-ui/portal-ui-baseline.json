@@ -623,7 +623,7 @@
                                 {
                                     "name": "sessionHostSize",
                                     "type": "Microsoft.Compute.SizeSelector",
-                                    "label": "VM Size",
+                                    "label": "VM Size1",
                                     "toolTip": "",
                                     "recommendedSizes": [
                                         "Standard_D4ads_v5"
