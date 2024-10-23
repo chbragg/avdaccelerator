@@ -629,7 +629,7 @@
                                         "Standard_D4ads_v5"
                                     ],
                                     "constraints": {
-                                        "allowedSizes": [],
+                                        "allowedSizes": "[if(equals(steps('sessionHosts').sessionHostsSecuritySection.securityType, 'ConfidentialVM'), filter(steps('sessionHosts').sessionHostsSize.allSizes, (size) => and(or(contains(size, 'DC'), contains(size, 'EC'), contains(size, 'NCC')), not(matches(size, '^DC[0-9]{1,2}s_v2$')), not(matches(size, '^DC[0-9]{1,2}s_v3$')), not(matches(size, '^DC[0-9]{1,2}ds_v3$')))), [])]",
                                         "excludedSizes": [],
                                         "required": true
                                     },
