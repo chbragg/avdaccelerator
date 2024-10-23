@@ -858,9 +858,7 @@
                                             }
                                         ]
                                     }
-                                }
-                            ]
-                        },
+                                },
                                 {
                                     "name": "secureBootEnabled",
                                     "type": "Microsoft.Common.CheckBox",
